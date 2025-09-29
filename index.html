@@ -13,5 +13,87 @@
     <script defer src="script.js"></script>
     <title>Password Generator</title>
   </head>
-  <body></body>
+  <body>
+    <main class="main-container">
+      <header class="header">
+        <h1 class="title">Password Generator</h1>
+      </header>
+      <div class="password-container">
+        <input type="text" placeholder="P4$5W0rD!" class="password-input" />
+      </div>
+      <section class="user-selections-section">
+        <form action="#" class="user-selections-form">
+          <div class="password-range-conatiner">
+            <label for="range">Character Length</label>
+            <input
+              type="range"
+              name="range"
+              id="range"
+              class="range"
+              min="0"
+              max="20"
+              value="10"
+              step="1"
+            />
+          </div>
+          <div class="checkboxes-container">
+            <div class="uppercase-container">
+              <input
+                type="checkbox"
+                name="uppercase"
+                id="uppercase"
+                class="uppercase"
+              />
+              <label for="uppercase">Include Uppercase Letters</label>
+            </div>
+            <div class="lowercase-container">
+              <input
+                type="checkbox"
+                name="lowercase"
+                id="lowercase"
+                class="lowercase"
+              />
+              <label for="lowercase">Include Lowercase Letters</label>
+            </div>
+            <div class="numbers-container">
+              <input
+                type="checkbox"
+                name="numbers"
+                id="numbers"
+                class="numbers"
+              />
+              <label for="numbers">Include Numbers</label>
+            </div>
+            <div class="symbols-container">
+              <input
+                type="checkbox"
+                name="symbols"
+                id="symbols"
+                class="symbols"
+              />
+              <label for="symbols">Include Symbols</label>
+            </div>
+          </div>
+        </form>
+        <div class="strength-container">
+          <span class="strength-text">STRENGTH</span>
+          <div class="strength-boxes-container">
+            <div class="str-box-1 str-box"></div>
+            <div class="str-box-2 str-box"></div>
+            <div class="str-box-3 str-box"></div>
+            <div class="str-box-4 str-box"></div>
+          </div>
+        </div>
+        <div class="generate-container">
+          <button class="generate-btn">
+            <span>GENERATE</span
+            ><img
+              src="images/icon-arrow-right.svg"
+              alt="arrow icon for generate button"
+            />
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

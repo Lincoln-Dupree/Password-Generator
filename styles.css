@@ -32,3 +32,44 @@ body {
   height: 100vh;
   height: 100dvh;
 }
+
+.main-container {
+  border: 2px solid red;
+  width: 37.5vw;
+  height: 67.5vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: var(--gray-600);
+  margin-bottom: 2rem;
+}
+
+.password-input {
+  width: 100%;
+  height: auto;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1.25rem 2rem;
+  margin-bottom: 1rem;
+  background-color: var(--gray-800);
+  outline: none;
+  border: none;
+}
+
+.password-input::placeholder {
+  color: var(--gray-700);
+  letter-spacing: 0.125rem;
+}
+
+.user-selections-section {
+  background-color: var(--gray-800);
+}
