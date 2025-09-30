@@ -150,3 +150,41 @@ body {
   right: 0;
   top: -0.5rem;
 }
+
+.checkboxes-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: ce;
+  gap: 1rem;
+  color: var(--gray-200);
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.check-self-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.checkbox {
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.1875rem solid var(--gray-200);
+}
+
+.checkbox:hover {
+  border-color: var(--green-200);
+}
+
+.checkbox:checked {
+  background-size: cover;
+  padding: 2px;
+}
+
+.checkbox:not(:disabled):checked {
+  border-color: var(--green-200);
+  background-color: var(--green-200);
+  background-image: url(images/icon-check.svg);
+}
