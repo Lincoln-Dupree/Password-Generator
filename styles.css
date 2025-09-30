@@ -57,8 +57,10 @@ body {
   width: 100%;
   height: auto;
   font-size: 2rem;
+  font-family: inherit;
   font-weight: 700;
-  padding: 1.25rem 2rem;
+  letter-spacing: 0.125rem;
+  padding: 1.5rem 2rem;
   margin-bottom: 1rem;
   background-color: var(--gray-800);
   outline: none;
@@ -67,9 +69,53 @@ body {
 
 .password-input::placeholder {
   color: var(--gray-700);
-  letter-spacing: 0.125rem;
 }
 
 .user-selections-section {
   background-color: var(--gray-800);
+  padding: 2rem;
+}
+
+.password-range-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.range-label {
+  color: var(--gray-200);
+  font-size: 1.25rem;
+  overflow: hidden;
+}
+
+.range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(
+    to right,
+    var(--green-200) 50%,
+    var(--gray-850) 50%
+  );
+  transition: background 0.3s ease;
+  height: 0.5rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--gray-200);
+  border-radius: 50%;
+}
+
+.range-slider::-webkit-slider-thumb:hover,
+.range-slider::-webkit-slider-thumb:active {
+  accent-color: var(--gray-800);
+  border: 2px solid var(--green-200);
+  background: var(--gray-850);
 }
