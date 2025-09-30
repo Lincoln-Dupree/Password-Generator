@@ -94,6 +94,7 @@ body {
   flex-direction: column;
   gap: 2rem;
   margin-bottom: 2rem;
+  position: relative;
 }
 
 .range-label {
@@ -140,4 +141,12 @@ body {
   background: var(--gray-850);
   width: 1.75rem;
   height: 1.75rem;
+}
+
+.range-counter {
+  color: var(--green-200);
+  font-size: 2rem;
+  position: absolute;
+  right: 0;
+  top: -0.5rem;
 }

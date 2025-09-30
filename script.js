@@ -1,6 +1,7 @@
 "use strict";
 
 const rangeSlider = document.querySelector(".range-slider");
+const rangeCounter = document.querySelector(".range-counter");
 
 function updateRangeSliderColor(slider) {
     let min = Number(slider.min);
@@ -12,8 +13,19 @@ function updateRangeSliderColor(slider) {
     slider.style.background = `linear-gradient(to right, var(--green-200) 0%, var(--green-200) ${percentage}%, var(--gray-850) ${percentage}%, var(--gray-850) 100%)`;
 }
 
+function updateRangeCounter(slider) {
+    let current_pos = Number(slider.value);
+
+    rangeCounter.textContent = current_pos;
+}
+
+
 updateRangeSliderColor(rangeSlider);
+updateRangeCounter(rangeSlider)
+
 
 rangeSlider.addEventListener("input", function () {
     updateRangeSliderColor(rangeSlider);
+    updateRangeCounter(rangeSlider);
 });
+
