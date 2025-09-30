@@ -109,13 +109,22 @@ body {
   appearance: none;
   width: 1.5rem;
   height: 1.5rem;
+  transition: width 0.25s cubic-bezier(0.175, 0.885, 0.35, 1.275);
+  transition: height 0.25s cubic-bezier(0.175, 0.885, 0.35, 1.275);
   background: var(--gray-200);
   border-radius: 50%;
 }
 
-.range-slider::-webkit-slider-thumb:hover,
+.range-slider::-webkit-slider-thumb:hover {
+  accent-color: var(--gray-800);
+  border: 2px solid var(--green-200);
+  background: var(--gray-850);
+}
+
 .range-slider::-webkit-slider-thumb:active {
   accent-color: var(--gray-800);
   border: 2px solid var(--green-200);
   background: var(--gray-850);
+  width: 1.75rem;
+  height: 1.75rem;
 }
