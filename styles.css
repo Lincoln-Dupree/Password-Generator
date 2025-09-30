@@ -49,6 +49,7 @@ body {
 
 .title {
   font-size: 1.5rem;
+  font-weight: 700;
   color: var(--gray-600);
   margin-bottom: 2rem;
 }
@@ -87,13 +88,17 @@ body {
 .user-selections-section {
   background-color: var(--gray-800);
   padding: 2rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .password-range-container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-bottom: 2rem;
   position: relative;
 }
 
@@ -154,11 +159,9 @@ body {
 .checkboxes-container {
   display: flex;
   flex-direction: column;
-  justify-content: ce;
   gap: 1rem;
   color: var(--gray-200);
   font-size: 1.125rem;
-  margin-bottom: 1rem;
 }
 
 .check-self-container {
@@ -187,4 +190,37 @@ body {
   border-color: var(--green-200);
   background-color: var(--green-200);
   background-image: url(images/icon-check.svg);
+}
+
+.strength-container {
+  background-color: var(--gray-850);
+  padding: 1.5rem;
+}
+
+.strength-text {
+  color: var(--gray-600);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* .generate-container {
+  display: flex;
+  gap: 10rem;
+} */
+
+.generate-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  background-color: var(--green-200);
+  padding: 1.5rem;
+  border: none;
+  letter-spacing: 0.125rem;
+}
+
+.generate-text {
+}
+
+.right-arrow-icon {
 }
