@@ -2,7 +2,13 @@
 
 const rangeSlider = document.querySelector(".range-slider");
 const rangeCounter = document.querySelector(".range-counter");
+const lowercaseList = [];
+const uppercaseList = [];
+const digitsList = [];
+const symbolsList = ["!", "@", "#", "$", "%", "^", "&", "*", "/", "+", "-", "="];
 
+
+// ***SLIDER FUNCTIONALITY***
 function updateRangeSliderColor(slider) {
     let min = Number(slider.min);
     let max = Number(slider.max);
@@ -19,13 +25,30 @@ function updateRangeCounter(slider) {
     rangeCounter.textContent = current_pos;
 }
 
-
 updateRangeSliderColor(rangeSlider);
 updateRangeCounter(rangeSlider)
-
 
 rangeSlider.addEventListener("input", function () {
     updateRangeSliderColor(rangeSlider);
     updateRangeCounter(rangeSlider);
 });
+
+// ***PASSWORD OPTIONS ARRAYS***
+
+for (let i = 97; i <= 122; i++) {
+    lowercaseList.push(String.fromCharCode(i));
+}
+
+
+for (let i = 65; i <= 90; i++) {
+    uppercaseList.push(String.fromCharCode(i));
+}
+
+
+for (let i = 0; i <= 9; i++) {
+    digitsList.push(i.toString());
+}
+
+
+
 

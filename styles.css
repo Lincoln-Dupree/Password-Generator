@@ -35,8 +35,8 @@ body {
 }
 
 .main-container {
-  width: 37.5vw;
-  height: 67.5vh;
+  width: min(37.5vw, 52.53vh);
+  height: min(67.5vh, 48.33vw);
   display: flex;
   flex-direction: column;
 }
@@ -232,19 +232,19 @@ body {
 }
 
 .str-box-1 {
-  background-color: var(--orange-400);
+  background-color: transparent;
 }
 
 .str-box-2 {
-  background-color: color-mix(in srgb, var(--orange-400), var(--yellow-300));
+  background-color: transparent;
 }
 
 .str-box-3 {
-  background-color: var(--yellow-300);
+  background-color: transparent;
 }
 
 .str-box-4 {
-  background-color: var(--green-200);
+  background-color: transparent;
 }
 
 .generate-btn {
