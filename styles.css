@@ -19,6 +19,7 @@
 
 html {
   font-size: 16px;
+  font-size: min(1.11vw, 1.55vh);
   font-family: "JetBrains Mono", monospace;
 }
 
