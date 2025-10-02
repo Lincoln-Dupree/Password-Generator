@@ -91,7 +91,22 @@ function updatePossibleChars() {
 }
 
 generateBtn.addEventListener("click", function () {
+    // clear previous click choices and make list
     possibleCharsList = [];
     updatePossibleChars();
-    console.log(possibleCharsList);
+
+    let genPassword = [];
+    let count = Number(rangeSlider.value);
+
+    if (possibleCharsList.length > 0) {
+        numPossible = possibleCharsList.length;
+
+        for (let i = 0; i < count; i++) {
+            randomChoice = Math.round(Math.random() * numPossible);
+        }
+    }
+
+
+
+
 });
