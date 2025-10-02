@@ -53,7 +53,6 @@ const uppercaseCheck = document.querySelector(".uppercase");
 const lowercaseCheck = document.querySelector(".lowercase");
 const numbersCheck = document.querySelector(".numbers");
 const symbolsCheck = document.querySelector(".symbols");
-const generateBtn = document.querySelector(".generate-btn");
 
 function addUppercase() {
     if (uppercaseCheck.checked)
@@ -86,9 +85,15 @@ function addSymbols() {
 function updatePossibleChars() {
     addUppercase();
     addLowercase();
+    // calling addNumbers()/addSymbols() twice to fix weighting
+    addNumbers();
     addNumbers();
     addSymbols();
+    addSymbols();
 }
+
+const generateBtn = document.querySelector(".generate-btn");
+const passwordInput = document.querySelector(".password-input");
 
 generateBtn.addEventListener("click", function () {
     // clear previous click choices and make list
@@ -99,14 +104,19 @@ generateBtn.addEventListener("click", function () {
     let count = Number(rangeSlider.value);
 
     if (possibleCharsList.length > 0) {
-        numPossible = possibleCharsList.length;
+        let numPossible = possibleCharsList.length;
 
         for (let i = 0; i < count; i++) {
-            randomChoice = Math.round(Math.random() * numPossible);
+            let randomNum = Math.floor(Math.random() * numPossible);
+            let randomChar = possibleCharsList[randomNum];
+
+            genPassword.push(randomChar)
         }
+
+        passwordInput.value = genPassword.join("");
+
+    } else {
+        passwordInput.value = "No Option Selected";
     }
-
-
-
 
 });

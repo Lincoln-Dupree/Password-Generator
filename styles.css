@@ -62,6 +62,7 @@ body {
   width: 100%;
   height: auto;
   font-size: 2rem;
+  color: var(--gray-200);
   font-family: inherit;
   font-weight: 700;
   letter-spacing: 0.125rem;
