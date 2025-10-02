@@ -2,13 +2,9 @@
 
 const rangeSlider = document.querySelector(".range-slider");
 const rangeCounter = document.querySelector(".range-counter");
-const lowercaseList = [];
-const uppercaseList = [];
-const digitsList = [];
-const symbolsList = ["!", "@", "#", "$", "%", "^", "&", "*", "/", "+", "-", "="];
-
 
 // ***SLIDER FUNCTIONALITY***
+
 function updateRangeSliderColor(slider) {
     let min = Number(slider.min);
     let max = Number(slider.max);
@@ -35,20 +31,67 @@ rangeSlider.addEventListener("input", function () {
 
 // ***PASSWORD OPTIONS ARRAYS***
 
+const lowercaseList = [];
+const uppercaseList = [];
+const digitsList = [];
+const symbolsList = ["!", "@", "#", "$", "%", "^", "&", "*", "/", "+", "-", "="];
+let possibleCharsList = [];
+
 for (let i = 97; i <= 122; i++) {
     lowercaseList.push(String.fromCharCode(i));
 }
-
 
 for (let i = 65; i <= 90; i++) {
     uppercaseList.push(String.fromCharCode(i));
 }
 
-
 for (let i = 0; i <= 9; i++) {
     digitsList.push(i.toString());
 }
 
+const uppercaseCheck = document.querySelector(".uppercase");
+const lowercaseCheck = document.querySelector(".lowercase");
+const numbersCheck = document.querySelector(".numbers");
+const symbolsCheck = document.querySelector(".symbols");
+const generateBtn = document.querySelector(".generate-btn");
 
+function addUppercase() {
+    if (uppercaseCheck.checked)
+        for (let char of uppercaseList) {
+            possibleCharsList.push(char);
+        }
+}
 
+function addLowercase() {
+    if (lowercaseCheck.checked)
+        for (let char of lowercaseList) {
+            possibleCharsList.push(char);
+        }
+}
 
+function addNumbers() {
+    if (numbersCheck.checked)
+        for (let char of digitsList) {
+            possibleCharsList.push(char);
+        }
+}
+
+function addSymbols() {
+    if (symbolsCheck.checked)
+        for (let char of symbolsList) {
+            possibleCharsList.push(char);
+        }
+}
+
+function updatePossibleChars() {
+    addUppercase();
+    addLowercase();
+    addNumbers();
+    addSymbols();
+}
+
+generateBtn.addEventListener("click", function () {
+    possibleCharsList = [];
+    updatePossibleChars();
+    console.log(possibleCharsList);
+});
