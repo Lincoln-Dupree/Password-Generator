@@ -164,12 +164,6 @@ function strengthDisplay(count) {
     }
 }
 
-
-
-
-
-
-
 const generateBtn = document.querySelector(".generate-btn");
 const passwordInput = document.querySelector(".password-input");
 
@@ -206,3 +200,10 @@ generateBtn.addEventListener("click", function () {
     // update strength display
     strengthDisplay(count);
 });
+
+const copyButton = document.querySelector(".copy-icon");
+
+copyButton.addEventListener("click", function () {
+    navigator.clipboard.writeText(passwordInput.value);
+    alert(`Password Copied: ${passwordInput.value}`)
+})
