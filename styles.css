@@ -9,6 +9,7 @@
   --green-200: rgb(164, 255, 175);
   --yellow-300: rgb(248, 205, 101);
   --orange-400: rgb(251, 124, 88);
+  --red-500: rgb(246, 74, 74);
 }
 
 * {
@@ -209,7 +210,7 @@ body {
 
 .strength-label {
   opacity: 0;
-  color: var(--gray-600);
+  color: var(--gray-200);
   font-size: 1.75rem;
   font-weight: 700;
 }

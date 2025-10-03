@@ -92,6 +92,84 @@ function updatePossibleChars() {
     addSymbols();
 }
 
+const allCheckboxes = document.querySelectorAll(".checkbox");
+const strBox1 = document.querySelector(".str-box-1");
+const strBox2 = document.querySelector(".str-box-2");
+const strBox3 = document.querySelector(".str-box-3");
+const strBox4 = document.querySelector(".str-box-4");
+const allStrBoxes = document.querySelectorAll(".str-box");
+const strengthScoreLabel = document.querySelector(".strength-label");
+
+function strengthDisplay(count) {
+    // reset strength color boxes
+    for (let each of allStrBoxes) {
+        each.style.backgroundColor = "transparent";
+        each.style.border = "1px solid var(--gray-200)";
+    }
+
+    // reset label styling
+    strengthScoreLabel.style.opacity = "0";
+    strengthScoreLabel.style.color = "var(--gray-200)";
+
+    let numChecked = 0;
+    let score = 0;
+
+    for (let box of allCheckboxes) {
+        if (box.checked) {
+            numChecked += 1;
+        }
+    }
+
+    score = count * numChecked;
+    console.log(score);
+
+    if (score == 0) {
+        return
+    } else if (score < 21) {
+        strengthScoreLabel.style.opacity = "1";
+        strengthScoreLabel.innerText = "BAD";
+        strengthScoreLabel.style.color = "var(--red-500)";
+        strBox1.style.backgroundColor = "var(--red-500)";
+        strBox1.style.border = "1px solid var(--red-500)";
+    } else if (score >= 21 && score < 41) {
+        strengthScoreLabel.style.opacity = "1";
+        strengthScoreLabel.innerText = "LOW";
+        strengthScoreLabel.style.color = "var(--orange-400)";
+        strBox1.style.backgroundColor = "var(--orange-400)";
+        strBox1.style.border = "1px solid var(--orange-400)";
+        strBox2.style.backgroundColor = "var(--orange-400)";
+        strBox2.style.border = "1px solid var(--orange-400)";
+    } else if (score >= 41 && score < 60) {
+        strengthScoreLabel.style.opacity = "1";
+        strengthScoreLabel.innerText = "MEDIUM";
+        strengthScoreLabel.style.color = "var(--yellow-300)";
+        strBox1.style.backgroundColor = "var(--yellow-300)";
+        strBox1.style.border = "1px solid var(--yellow-300)";
+        strBox2.style.backgroundColor = "var(--yellow-300)";
+        strBox2.style.border = "1px solid var(--yellow-300)";
+        strBox3.style.backgroundColor = "var(--yellow-300)";
+        strBox3.style.border = "1px solid var(--yellow-300)";
+    } else if (score >= 60) {
+        strengthScoreLabel.style.opacity = "1";
+        strengthScoreLabel.innerText = "HIGH";
+        strengthScoreLabel.style.color = "var(--green-200)";
+        strBox1.style.backgroundColor = "var(--green-200)";
+        strBox1.style.border = "1px solid var(--green-200";
+        strBox2.style.backgroundColor = "var(--green-200)";
+        strBox2.style.border = "1px solid var(--green-200)";
+        strBox3.style.backgroundColor = "var(--green-200)";
+        strBox3.style.border = "1px solid var(--green-200)";
+        strBox4.style.backgroundColor = "var(--green-200)";
+        strBox4.style.border = "1px solid var(--green-200)";
+    }
+}
+
+
+
+
+
+
+
 const generateBtn = document.querySelector(".generate-btn");
 const passwordInput = document.querySelector(".password-input");
 
@@ -100,6 +178,8 @@ generateBtn.addEventListener("click", function () {
     possibleCharsList = [];
     updatePossibleChars();
 
+
+    // generate password
     let genPassword = [];
     let count = Number(rangeSlider.value);
 
@@ -113,10 +193,16 @@ generateBtn.addEventListener("click", function () {
             genPassword.push(randomChar)
         }
 
+        passwordInput.style.color = "var(--gray-200)"
         passwordInput.value = genPassword.join("");
+        passwordInput.style.fontStyle = "normal";
 
     } else {
         passwordInput.value = "No Option Selected";
+        passwordInput.style.color = "var(--red-500)";
+        passwordInput.style.fontStyle = "italic";
     }
 
+    // update strength display
+    strengthDisplay(count);
 });
