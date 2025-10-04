@@ -123,7 +123,7 @@ function strengthDisplay(count) {
     score = count * numChecked;
     console.log(score);
 
-    if (score == 0) {
+    if (score === 0) {
         return
     } else if (score < 21) {
         strengthScoreLabel.style.opacity = "1";
@@ -154,7 +154,7 @@ function strengthDisplay(count) {
         strengthScoreLabel.innerText = "HIGH";
         strengthScoreLabel.style.color = "var(--green-200)";
         strBox1.style.backgroundColor = "var(--green-200)";
-        strBox1.style.border = "1px solid var(--green-200";
+        strBox1.style.border = "1px solid var(--green-200)";
         strBox2.style.backgroundColor = "var(--green-200)";
         strBox2.style.border = "1px solid var(--green-200)";
         strBox3.style.backgroundColor = "var(--green-200)";

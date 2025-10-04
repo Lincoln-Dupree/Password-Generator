@@ -168,8 +168,8 @@ body {
 
 .check-self-container {
   display: flex;
-  gap: 1rem;
   align-items: center;
+  gap: 1rem;
 }
 
 .checkbox {
@@ -305,6 +305,10 @@ body {
     height: min(67.5vh, 48.33vw); */
     display: flex;
     flex-direction: column;
+  }
+
+  .checkboxes-container {
+    gap: 2rem;
   }
 }
 
